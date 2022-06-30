@@ -1,0 +1,20 @@
+<script type="text/javascript">
+	var myObj={
+		gift:"pony",
+		pet:"kitten",
+		bed:"sleigh"
+	};
+
+	function checkObj(checkProp){
+		//your code here
+		if (myObj.hasOwnProperty(checkProp)){
+			return myObj[checkProp];
+		}
+		else {
+			return "Not found"
+		}
+		return "change me!";
+	}
+	//Test your code by modifying these values
+	console.log(checkObj("Hello"));
+</script>

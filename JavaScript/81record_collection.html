@@ -1,0 +1,73 @@
+<script type="text/javascript">
+	var collection={
+		"2548":{
+			"album":"Slippery when wet",
+			"artist":"Bon Jovi",
+			"tracks":[
+				"Let it rock",
+				"You give love a bad name"
+			]
+		},
+		"2468":{
+			"album":"1999",
+			"artist":"Prince",
+			"tracks":[
+				"1999",
+				"Little red corvette"
+			]
+		},
+		"1245":{
+			"artist":"robert Palmer",
+			"tracks":[]
+		},
+		"5439":{
+			"album":"ABBA Gold"
+		}
+	};
+	//keep a copy of collection for tests
+	var collectionCopy=JSON.parse(JSON.stringify(collection));
+	//only change code below this line
+	function updateRecords(id,prop,value){
+		if(value === ""){
+			delete collection[id][prop];
+		}
+		else if(prop==="tracks"){
+			collection[id][prop]=collection[id][prop] || [];
+			collection[id][prop].push(value);
+		}
+		else{
+			collection[id][prop]=value;
+		}
+		return collection;
+	}
+	//alter values below to test your code
+	updateRecords(2468,"tracks","test");
+	console.log(updateRecords(5439,"artist","ABBA"));
+/*
+A common use of JSON is to exchange data to/from a web server.
+
+When sending data to a web server, the data has to be a string.
+
+Convert a JavaScript object into a string with JSON.stringify().
+
+
+
+A common use of JSON is to exchange data to/from a web server.
+
+When receiving data from a web server, the data is always a string.
+
+Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+
+
+
+
+
+You are given a JSON object representing a part of your musical album collection. Each album has a unique id number as its key and several other properties. Not all albums have complete information.
+
+You start with an updateRecords function that takes an object like collection, an id, a prop (like artist or tracks), and a value. Complete the function using the rules below to modify the object passed to the function.
+
+1.Your function must always return the entire object. 2. If prop isn't tracks and value isn't an empty string, update or set that album's prop to value. 3. If prop is tracks but the album doesn't have a tracks property, create an empty array and add value to it. 4. If prop is tracks and value isn't an empty string, add value to the end of the album's existing tracks array. 5. If value is an empty string, delete the given prop property from the album.
+
+Note: A copy of the collection object is used for the tests.
+*/
+</script>

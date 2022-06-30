@@ -1,0 +1,54 @@
+<script type="text/javascript">
+	//setup
+	var contacts = [
+	{
+		"firstName":"Akira",
+		"lastName":"laine",
+		"number":"1320402871",
+		"likes":["Pizza","coding","brownie Points"]
+	},
+
+	{
+		"firstName":"Harry",
+		"lastName":"Potter",
+		"number":"0731836581",
+		"likes":["Hogwarts","Magic","Hagrid"]
+	},
+
+	{
+		"firstName":"Sherlock",
+		"lastName":"Holmes",
+		"number":"0428194739",
+		"likes":["Intriguing Cases","Violin"]
+	},
+
+	{
+		"firstName":"Kristian",
+		"lastName":"Vos",
+		"number":"unknown",
+		"likes":["JavaScript","Gaming","Foxes"]
+	}
+
+	];
+
+	function lookUpProfile(name,prop){
+		for (var i=0; i < contacts.length; i++){
+			if(contacts[i].firstName === name){
+				return contacts[i][prop] || "no such property";
+			}
+		}
+	return "no such contact";
+	}
+	//change these values to test your code 
+
+	var data = lookUpProfile("Sherlock","lastName");
+	console.log(data);
+	/*Change the code below // Only change code below this line and up to // Only change code above this line.
+Ensure that you are editing the inside of the lookUpProfile() function.
+This function includes two parameters, firstName and prop.
+The function should look through the contacts list for the given firstName parameter.
+If there is a match found, the function should then look for the given prop parameter.
+If both firstName and the associated prop are found, you should return the value of the prop.
+If firstName is found and no associated prop is found, you should return No such property.
+If firstName isn’t found anywhere, you should return No such contact.*\
+</script>
